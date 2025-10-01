@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - Mengal ❤️ Zainee</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Login — Mengal ❤️ Zainee</h1>
+  <p class="center small">Use usernames: <strong>Mengal</strong> or <strong>Zainee</strong></p>
+  <div style="max-width:420px;margin:0 auto;">
+    <input id="username" placeholder="Username" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee">
+    <input id="password" placeholder="Password" type="password" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:8px">
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <button id="loginBtn" class="button">Login</button>
+      <button id="gotoHome" class="button" style="background:#6b2b4a">Home</button>
+    </div>
+    <p class="note">Default passwords set by you:<br><strong>Mengal:</strong> 1231991@mng  &nbsp;  <strong>Zainee:</strong> mengal@mng</p>
+    <p id="msg" class="small center"></p>
+  </div>
+</div>
+<script>
+if (!localStorage.getItem('Mengal')) localStorage.setItem('Mengal','1231991@mng');
+if (!localStorage.getItem('Zainee')) localStorage.setItem('Zainee','mengal@mng');
+document.getElementById('gotoHome').addEventListener('click', ()=> location.href='index.html');
+document.getElementById('loginBtn').addEventListener('click', ()=>{
+  const u = document.getElementById('username').value.trim();
+  const p = document.getElementById('password').value;
+  const msg = document.getElementById('msg');
+  if(!u||!p){ msg.textContent='❌ Dubara try maro jan'; return; }
+  const saved = localStorage.getItem(u);
+  if(saved && saved === p){ localStorage.setItem('loggedInUser', u); location.href='index.html'; }
+  else { msg.textContent='❌ Dubara try maro jan'; }
+});
+</script>
+</body>
+</html>

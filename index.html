@@ -1,0 +1,24 @@
+
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home - Mengal ❤️ Zainee</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<div class="container">
+  <h1 id="greet">Welcome meri jaan 💖</h1>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px">
+    <a href="chat.html" class="button">Chat</a>
+    <a href="games.html" class="button">Games</a>
+    <a href="countdown.html" class="button">Countdown</a>
+    <a href="gifts.html" class="button">Gifts</a>
+    <a href="lovewall.html" class="button">Love Wall</a>
+    <a href="login.html" class="button" style="background:#6b2b4a">Logout</a>
+  </div>
+  <p class="note center">This site is private for Mengal & Zainee. Login to see personalized greetings.</p>
+</div>
+<script>
+const u = localStorage.getItem('loggedInUser') || '';
+if(u) document.getElementById('greet').textContent = 'Welcome ' + u + ' meri jaan 💖';
+</script>
+</body></html>

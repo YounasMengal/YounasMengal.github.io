@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat - Mengal ❤️ Zainee</title><link rel="stylesheet" href="assets/style.css"></head><body>
+<div class="container"><h1>Chat</h1><p class="small center">Realtime chat (Firebase) — demo UI included.</p>
+<div class="card"><div id="messages"></div></div>
+<div style="max-width:720px;margin:12px auto;display:flex;gap:8px">
+  <input id="msg" placeholder="Type a message..." style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee">
+  <button id="send" class="button">Send</button>
+</div>
+</div>
+<script>
+document.getElementById('send').addEventListener('click', ()=>{
+  const m = document.getElementById('msg').value.trim();
+  if(!m) return;
+  const el = document.createElement('div'); el.textContent = (localStorage.getItem('loggedInUser')||'You')+': '+m; document.getElementById('messages').appendChild(el); document.getElementById('msg').value='';
+});
+</script>
+</body></html>

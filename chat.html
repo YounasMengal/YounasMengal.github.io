@@ -1,10 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  text-align: center;
+}
 
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chat - Mengal ❤️ Zainee</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<div class="container"><div class="header"><div class="logo">Chat</div><div></div></div>
-  <div class="card"><div id="messages" style="min-height:260px"></div></div>
-  <div style="display:flex;gap:8px;margin-top:12px"><input id="msg" placeholder="Type a message..."><button id="send" class="button">Send</button></div>
-  <p class="small center">This page is wired for Firebase in the full package.</p>
-</div>
-<script src="assets/main.js"></script>
-</body></html>
+header {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-bottom: 2px solid #ff4d6d;
+}
+
+h1 {
+  color: #d63384;
+  font-size: 28px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  background: #d63384;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #ff4d6d;
+  transform: scale(1.1);
+}
+
+main {
+  margin-top: 50px;
+  font-size: 18px;
+}

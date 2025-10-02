@@ -1,7 +1,32 @@
-// assets/main.js - shared helpers
-document.addEventListener('DOMContentLoaded', ()=>{
-  const user = localStorage.getItem('loggedInUser') || '';
-  const greet = document.getElementById('greetUser');
-  if(greet && user) greet.textContent = `Welcome ${user} meri jaan 💖`;
-  document.querySelectorAll('[data-link]').forEach(b=> b.addEventListener('click', ()=> location.href=b.dataset.link));
-});
+// Logout
+function logout() {
+  alert("You have logged out ❤️");
+}
+
+// Chat dummy
+function sendMessage() {
+  const msgBox = document.getElementById("msgInput");
+  const messages = document.getElementById("messages");
+  if(msgBox.value.trim() !== "") {
+    const p = document.createElement("p");
+    p.textContent = "You: " + msgBox.value;
+    messages.appendChild(p);
+    msgBox.value = "";
+  }
+}
+
+// Countdown
+const targetDate = new Date("2025-04-27"); // Example: Mengal ka birthday
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+  if(diff > 0) {
+    const days = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("countdown").textContent = days + " days left 🎉";
+  } else {
+    document.getElementById("countdown").textContent = "Today is the Day 🎂❤️";
+  }
+}
+if(document.getElementById("countdown")) {
+  setInterval(updateCountdown, 1000);
+}

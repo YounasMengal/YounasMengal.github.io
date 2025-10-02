@@ -1,22 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Wall ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Love Wall ❤️</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chat.html">Chat</a>
+      <a href="games.html">Games</a>
+      <a href="countdown.html">Countdown</a>
+      <a href="gifts.html">Gifts</a>
+    </nav>
+  </header>
 
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Love Wall - Mengal ❤️ Zainee</title><link rel='stylesheet' href='assets/style.css'></head><body>
-<div class='container'><h1 class='center'>Love Wall — Apni jaan / Sorry / Pyaar Mood</h1>
-<p class='small center'>Below are 12 special messages added by me. Both can add local messages too.</p><div id='wall' class='list'>
-<div class='card'><p>1) Meri zindagi tumhare bina adhoori hai — maine har khushi tumse hi paayi hai. Tum meri pehchan ho, meri jaan.</p></div>
-<div class='card'><p>2) Jab tum has deti ho, to har dard door ho jata hai. Mujhe maaf kar do agar maine kabhi tumhe rulaaya ho.</p></div>
-<div class='card'><p>3) Tumhara pyaar mere liye roshni ki tarah hai — andhere me bhi raasta dikhata hai. Main hamesha tumhara saath dunga.</p></div>
-<div class='card'><p>4) Aaj aur har roz main tumse yeh waada karta hoon — tumhara saath, tumhari khushi, meri zimmedari hai.</p></div>
-<div class='card'><p>5) Meri har dua tum tak pohanchti hai. Agar kabhi ghalati hui ho toh maaf karna — main sudhar jaunga.</p></div>
-<div class='card'><p>6) Tum meri sabse pyaari kamzori ho. Tumhare bina kuch bhi mumkin nahin lagta.</p></div>
-<div class='card'><p>7) Aao aaj phir se woh wada karein jo pehli baar kiya tha — hamesha saath chalne ka.</p></div>
-<div class='card'><p>8) Tumhara haath pakad kar main duniya bhul jaata hoon — bas tum aur main.</p></div>
-<div class='card'><p>9) Tum meri shayari ho — har lafz tumhare liye hi likha gaya hai.</p></div>
-<div class='card'><p>10) Mere liye tum sab kuch ho — mera guzar, mera kal aur meri manzil.</p></div>
-<div class='card'><p>11) Aaj main tumse sorry kehna chahta hoon agar maine kabhi dukh diya ho — mujhse baat kar do, sab theek karlenge.</p></div>
-<div class='card'><p>12) Hamari mohabbat ko khuda aur hum dono hifazat mein rakhen — hamesha ek dusre ke saath.</p></div>
-</div>
-<div class='card' style='margin-top:12px'><h2 class='center'>Add a message (local)</h2><textarea id='newmsg' rows='4' placeholder='Write your message...'></textarea><div style='display:flex;gap:8px;margin-top:8px'><button id='addBtn' class='button'>Add to Wall</button><button id='clearBtn' class='button' style='background:#6b2b4a'>Clear Wall (local)</button></div><p class='note'>Messages stored in your browser for privacy.</p></div>
-<script>
-const key='lovewall_posts_v1';const wall=document.getElementById('wall');function load(){const s=JSON.parse(localStorage.getItem(key)||'[]');s.forEach(m=>{const d=document.createElement('div');d.className='card';d.innerHTML='<p>'+m+'</p>';wall.prepend(d);});}document.getElementById('addBtn').addEventListener('click',()=>{const v=document.getElementById('newmsg').value.trim();if(!v)return alert('Type your message');const s=JSON.parse(localStorage.getItem(key)||'[]');s.unshift(v);localStorage.setItem(key,JSON.stringify(s));const d=document.createElement('div');d.className='card';d.innerHTML='<p>'+v+'</p>';wall.prepend(d);document.getElementById('newmsg').value='';});document.getElementById('clearBtn').addEventListener('click',()=>{if(confirm('Clear local wall?')){localStorage.removeItem(key);location.reload();}});load();
-</script></body></html>
+  <main>
+    <h2>Feelings Wall 💕</h2>
+    <p>💖 Sorry moments, love notes, pyar bhari baatein yahan likhi jaayengi.</p>
+    <textarea placeholder="Write your message..." rows="6" cols="50"></textarea>
+    <br>
+    <button>Post</button>
+  </main>
+</body>
+</html>

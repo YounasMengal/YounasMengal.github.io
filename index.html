@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mengal ❤️ Zainee — Login</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar"><h1>Mengal ❤️ Zainee</h1></header>
+    <main class="card center">
+      <h2>Sign in</h2>
+      <p>Use preset accounts for two-user demo:</p>
+      <div class="row">
+        <button id="loginMengal">Login as Mengal</button>
+        <button id="loginZainee">Login as Zainee</button>
+      </div>
+      <p style="font-size:13px;color:var(--muted)">Or paste your Firebase web config into <code>firebase-config.js</code> and create two users named <strong>mengal@example.com</strong> and <strong>zainee@example.com</strong> in Firebase Auth (passwords can be same).</p>
+    </main>
+  </div>
+<script src="firebase-config.js"></script>
+<script type="module" src="firebase-init.js"></script>
+<script>
+import { signInAsPreset } from './scripts/login.js';
+document.getElementById('loginMengal').addEventListener('click', ()=> signInAsPreset('mengal@example.com','password123'));
+document.getElementById('loginZainee').addEventListener('click', ()=> signInAsPreset('zainee@example.com','password123'));
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mengal ❤️ Zainee — Chat</title>
+<link rel="stylesheet" href="styles.css"/></head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="index.html" class="back">←</a>
+        <h1>Mengal ❤️ Zainee</h1>
+      </div>
+      <div id="userArea"></div>
+    </header>
+
+    <section class="chat card">
+      <div class="chat-header">
+        <div class="avatar">M</div>
+        <div>
+          <div id="peerName">Zainee</div>
+          <div id="presence" class="presence-offline">Offline</div>
+        </div>
+      </div>
+
+      <ul id="messages" class="messages"></ul>
+
+      <div class="composer">
+        <input id="msgInput" placeholder="Say something..." autocomplete="off"/>
+        <button id="sendBtn">Send</button>
+      </div>
+
+      <div class="typing" id="typingIndicator" style="font-size:13px;color:var(--muted);padding:8px 12px;"></div>
+    </section>
+  </div>
+
+<script src="firebase-config.js"></script>
+<script type="module" src="firebase-init.js"></script>
+<script type="module" src="scripts/chat.js"></script>
+</body></html>

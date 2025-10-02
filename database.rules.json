@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "presence": {
+      "mengal_zainee": {
+        "$uid": {
+          ".read": "auth != null && (auth.token.email == 'mengal@example.com' || auth.token.email == 'zainee@example.com')",
+          ".write": "auth != null && (auth.token.email == 'mengal@example.com' || auth.token.email == 'zainee@example.com')"
+        }
+      }
+    },
+    "typing": {
+      "mengal_zainee": {
+        "$uid": {
+          ".read": "auth != null && (auth.token.email == 'mengal@example.com' || auth.token.email == 'zainee@example.com')",
+          ".write": "auth != null && (auth.token.email == 'mengal@example.com' || auth.token.email == 'zainee@example.com')"
+        }
+      }
+    }
+  }
+}

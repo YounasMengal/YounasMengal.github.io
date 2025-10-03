@@ -1,38 +1,75 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Mengal ❤️ Zainee — Chat</title>
-<link rel="stylesheet" href="styles.css"/></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mengal ❤️ Zainee — Chat</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
 <body>
   <div class="app">
     <header class="topbar">
-      <div style="display:flex;align-items:center;gap:12px">
-        <a href="index.html" class="back">←</a>
-        <h1>Mengal ❤️ Zainee</h1>
-      </div>
-      <div id="userArea"></div>
+      <h1>Chat Room</h1>
+      <button onclick="logout()">Logout</button>
     </header>
-
-    <section class="chat card">
-      <div class="chat-header">
-        <div class="avatar">M</div>
-        <div>
-          <div id="peerName">Zainee</div>
-          <div id="presence" class="presence-offline">Offline</div>
-        </div>
-      </div>
-
+    <main class="card">
+      <h2 id="welcome"></h2>
       <ul id="messages" class="messages"></ul>
-
       <div class="composer">
-        <input id="msgInput" placeholder="Say something..." autocomplete="off"/>
-        <button id="sendBtn">Send</button>
+        <input id="msgInput" placeholder="Type message..."/>
+        <button onclick="sendMessage()">Send</button>
       </div>
-
-      <div class="typing" id="typingIndicator" style="font-size:13px;color:var(--muted);padding:8px 12px;"></div>
-    </section>
+    </main>
   </div>
 
-<script src="firebase-config.js"></script>
-<script type="module" src="firebase-init.js"></script>
-<script type="module" src="scripts/chat.js"></script>
-</body></html>
+<script>
+  // LocalStorage se current user
+  let currentUser = localStorage.getItem("currentUser");
+  if(!currentUser){
+    window.location.href = "index.html";
+  }
+  document.getElementById("welcome").textContent = "Welcome, " + currentUser + "!";
+
+  // 🔥 Firebase Config (replace with your keys)
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+    projectId: "YOUR_PROJECT",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  const msgList = document.getElementById("messages");
+  const input = document.getElementById("msgInput");
+
+  function sendMessage(){
+    if(input.value.trim() === "") return;
+    db.ref("messages").push({
+      user: currentUser,
+      text: input.value,
+      timestamp: Date.now()
+    });
+    input.value = "";
+  }
+
+  db.ref("messages").on("child_added", snapshot => {
+    const msg = snapshot.val();
+    let li = document.createElement("li");
+    li.textContent = msg.user + ": " + msg.text;
+    msgList.appendChild(li);
+  });
+
+  function logout(){
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "messages": {
+      ".read": true,
+      ".write": "root.child('allowedUsers').child(auth.token.email.replace('.', '_')).exists()"
+    },
+    "games": {
+      ".read": true,
+      ".write": "root.child('allowedUsers').child(auth.token.email.replace('.', '_')).exists()"
+    },
+    "music": {
+      ".read": true,
+      ".write": "root.child('allowedUsers').child(auth.token.email.replace('.', '_')).exists()"
+    },
+    "gifts": {
+      ".read": true,
+      ".write": "root.child('allowedUsers').child(auth.token.email.replace('.', '_')).exists()"
+    },
+    "allowedUsers": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}

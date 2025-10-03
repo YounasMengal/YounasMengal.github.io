@@ -1,0 +1,12 @@
+:root{--accent:#ff6f91;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial;margin:0;background:linear-gradient(180deg,#fff6fb 0%,#fff 100%);color:#111;display:flex;flex-direction:column;min-height:100vh}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px;background:linear-gradient(90deg,#ffd6e8,#ffd1ff)}
+.card{padding:18px;margin:18px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.center{display:flex;flex-direction:column;align-items:center;gap:12px}
+.login-card input{width:260px;padding:10px;border-radius:8px;border:1px solid #eee;margin:6px 0}
+.row{display:flex;gap:8px}
+button{background:var(--accent);color:#fff;border:none;padding:10px 12px;border-radius:10px;cursor:pointer}
+.messages{height:300px;overflow:auto;border-radius:8px;padding:10px;border:1px solid #f0d0df;background:#fff6fb}
+.composer{display:flex;gap:8px;margin-top:12px}
+.composer input{flex:1;padding:10px;border-radius:8px;border:1px solid #eee}

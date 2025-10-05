@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — Mengal</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+  <header class="chat-header">
+    <div class="user-info"><div class="user-avatar"></div><div><div class="user-display-name">Partner</div><div class="status"><div class="status-dot"></div><span>Online</span></div></div></div>
+  </header>
+  <main class="chat-messages" id="chatMessages">
+    <div class="welcome-message"><div class="message-bubble text-center"><i class="fas fa-heart" style="color:var(--color-pink)"></i><p>Welcome! Start your romantic journey...</p></div></div>
+  </main>
+  <div class="typing-indicator hidden" id="typingIndicator"><div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div><span>is typing...</span></div>
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+    <button id="heartBtn"><i class="fas fa-heart"></i></button>
+  </div>
+  <nav class="bottom-nav">
+    <a href="chat.html" class="nav-item active"><i class="fas fa-comments nav-icon"></i><span>Chat</span></a>
+    <a href="countdown.html" class="nav-item"><i class="fas fa-calendar-heart nav-icon"></i><span>Events</span></a>
+    <a href="music.html" class="nav-item"><i class="fas fa-music nav-icon"></i><span>Music</span></a>
+    <a href="games.html" class="nav-item"><i class="fas fa-gamepad nav-icon"></i><span>Games</span></a>
+    <a href="settings.html" class="nav-item"><i class="fas fa-cog nav-icon"></i><span>Settings</span></a>
+  </nav>
+</div>
+<script type="module" src="js/chat.js"></script>
+</body>
+</html>
